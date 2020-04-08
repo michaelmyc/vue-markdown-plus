@@ -1,15 +1,16 @@
-import markdownIt from 'markdown-it'
-import emoji from 'markdown-it-emoji'
-import subscript from 'markdown-it-sub'
-import superscript from 'markdown-it-sup'
-import footnote from 'markdown-it-footnote'
-import deflist from 'markdown-it-deflist'
-import abbreviation from 'markdown-it-abbr'
-import insert from 'markdown-it-ins'
-import mark from 'markdown-it-mark'
-import toc from 'markdown-it-toc-and-anchor'
-import katex from 'markdown-it-katex'
-import tasklists from 'markdown-it-task-lists'
+import markdownIt from 'markdown-it';
+import emoji from 'markdown-it-emoji';
+import subscript from 'markdown-it-sub';
+import superscript from 'markdown-it-sup';
+import footnote from 'markdown-it-footnote';
+import deflist from 'markdown-it-deflist';
+import abbreviation from 'markdown-it-abbr';
+import attributes from 'markdown-it-attrs';
+import insert from 'markdown-it-ins';
+import mark from 'markdown-it-mark';
+import toc from 'markdown-it-toc-and-anchor';
+import katex from 'markdown-it-katex';
+import tasklists from 'markdown-it-task-lists';
 
 export default {
   md: new markdownIt(),
@@ -144,6 +145,7 @@ export default {
       .use(footnote)
       .use(deflist)
       .use(abbreviation)
+      .use(attributes)
       .use(insert)
       .use(mark)
       .use(katex, { "throwOnError": false, "errorColor": " #cc0000" })

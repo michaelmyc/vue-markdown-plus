@@ -1,5 +1,6 @@
 var path = require('path')
 var webpack = require('webpack')
+const VueLoaderPlugin = require('vue-loader/lib/plugin')
 
 module.exports = {
   entry: './src/main.js',
@@ -18,8 +19,11 @@ module.exports = {
         }
       },
       {
-        test: /\.json$/,
-        loader: 'json-loader'
+        test: /\.css$/,
+        loader: [
+          'vue-style-loader',
+          'css-loader'
+        ]
       },
       {
         test: /\.js$/,
@@ -35,6 +39,9 @@ module.exports = {
       }
     ]
   },
+  plugins: [
+    new VueLoaderPlugin(),
+  ],
   resolve: {
     alias: {
       'vue$': 'vue/dist/vue'

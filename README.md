@@ -1,14 +1,16 @@
-# vue-markdown
+# vue-markdown-plus
 
-[![npm](https://img.shields.io/npm/v/vue-markdown.svg?style=flat)](https://www.npmjs.com/package/vue-markdown)
-[![npm](https://img.shields.io/npm/l/vue-markdown.svg?style=flat)](https://www.npmjs.com/package/vue-markdown)
-[![npm](https://img.shields.io/npm/dt/vue-markdown.svg?style=flat)](https://www.npmjs.com/package/vue-markdown)
+[![npm](https://img.shields.io/npm/v/vue-markdown-plus.svg?style=flat)](https://www.npmjs.com/package/vue-markdown-plus)
+[![npm](https://img.shields.io/npm/l/vue-markdown-plus.svg?style=flat)](https://www.npmjs.com/package/vue-markdown-plus)
+[![npm](https://img.shields.io/npm/dt/vue-markdown-plus.svg?style=flat)](https://www.npmjs.com/package/vue-markdown-plus)
 
-> If you want vue-markdown for `vue1.X.X`, please checkout [vue-markdown1.X.X](https://github.com/miaolz123/vue-markdown/tree/v1).
+> This package does not support `vue1.X.X`.
 
-A Powerful and Highspeed Markdown Parser for Vue.
+A powerful and highspeed Markdown component for Vue.
 
-Quick start: `<vue-markdown>i am a ~~tast~~ **test**.</vue-markdown>`
+This is an extension to [miaolz123](https://github.com/miaolz123)'s [vue-markdown](https://github.com/miaolz123/vue-markdown). The last update to vue-markdow was in 2017, and is not actively maintained (dependencies contain security vulnerabilities). This package intends to be a safe, up-to-date alternative to vue-router. 
+
+Quick start: `<vue-markdown-plus>i am a ~~tast~~ **test**.</vue-markdown-plus>`
 
 Supported Markdown Syntax:
 
@@ -19,6 +21,7 @@ Supported Markdown Syntax:
 * [x] strikethrough
 * [x] GFM task list
 * [x] abbreviation
+* [x] custom attributes (class, id, etc.)
 * [x] superscript
 * [x] subscript
 * [x] footnote
@@ -27,32 +30,32 @@ Supported Markdown Syntax:
 * [x] emoji
 * [x] mark
 
-`*SyntaxHighlighter` work with [Prism](https://prismjs.com) recommend
+`*SyntaxHighlighter` work with [Prism](https://prismjs.com)
 
-`*katex` need add [katex css](https://unpkg.com/katex/dist/katex.min.css).
+`*katex` needs [katex css](https://unpkg.com/katex/dist/katex.min.css).
 
 # Example
 
-[simple](https://github.com/miaolz123/vue-markdown/blob/master/example/simple)
+[simple](https://github.com/6etacat/vue-markdown-plus/blob/master/example/simple)
 
-[webpack-simple](https://github.com/miaolz123/vue-markdown/blob/master/example/webpack-simple)
+[webpack-simple](https://github.com/6etacat/vue-markdown-plus/blob/master/example/webpack-simple)
 
-[Live Demo](https://miaolz123.github.io/vue-markdown/)
+[Live Demo](https://michaelmao.me/vue-markdown-plus)
 
 # Installation
 
 ### Browser globals
 
-> The **dist** folder contains `vue-markdown.js` with the component exported in the `window.VueMarkdown` object.
+> The **dist** folder contains `vue-markdown.js` with the component exported in the `window.VueMarkdownPlus` object.
 
 ```html
 <body>
   <vue-markdown>i am a ~~tast~~ **test**.</vue-markdown>
 </body>
 <script src="path/to/vue.js"></script>
-<script src="path/to/vue-markdown.js"></script>
+<script src="path/to/vue-markdown-plus.js"></script>
 <script>
-    Vue.use(VueMarkdown);
+    Vue.use(VueMarkdownPlus);
     var vm = new Vue({
         el: "body"
     });
@@ -62,23 +65,23 @@ Supported Markdown Syntax:
 ### NPM
 
 ```shell
-$ npm install --save vue-markdown
+$ npm install --save vue-markdown-plus
 ```
 
 ### Yarn
 
 ```shell
-$ yarn add vue-markdown --save
+$ yarn add vue-markdown-plus --save
 ```
 
 ## CommonJS
 
 ```js
-var VueMarkdown = require('vue-markdown');
+var VueMarkdownPlus = require('vue-markdown-plus');
 
 new Vue({
   components: {
-    'vue-markdown': VueMarkdown
+    'vue-markdown-plus': VueMarkdownPlus
   }
 })
 ```
@@ -88,11 +91,11 @@ new Vue({
 After installing via Yarn or NPM, use the following snippet in the script portion of the Vue component which you wish to render the Markdown.
 
 ```js
-import VueMarkdown from 'vue-markdown'
+import VueMarkdownPlus from 'vue-markdown-plus';
 
 new Vue({
   components: {
-    VueMarkdown
+    VueMarkdownPlus
   }
 })
 ```
@@ -150,11 +153,13 @@ TIP: The default slot only renders **once** at the beginning, and it will overwr
 # Thanks
 
 - [markdown-it](https://github.com/markdown-it/markdown-it)
+- [miaolz123](https://github.com/miaolz123)
 - [transtone](https://github.com/transtone)
 - [**brandonferens**](https://github.com/brandonferens)
 
 # Contributions
 
+- [6etacat](https://github.com/6etacat)
 - [miaolz123](https://github.com/miaolz123)
 - [brandonferens](https://github.com/brandonferens)
 - [brianbancroft](https://github.com/brianbancroft)
@@ -168,4 +173,4 @@ TIP: The default slot only renders **once** at the beginning, and it will overwr
 
 # License
 
-Copyright (c) 2016 [miaolz123](https://github.com/miaolz123) by [MIT](https://opensource.org/licenses/MIT)
+Copyright (c) 2016 [6etacat](https://github.com/6etacat) by [MIT](https://opensource.org/licenses/MIT)

@@ -1,9 +1,9 @@
 <template>
   <div id="app">
-    <vue-markdown>The time of **NOW** is :</vue-markdown>
-    <vue-markdown :source="source"></vue-markdown>
-    <vue-markdown :anchor-attributes="anchorAttrs">[A link to a website](https://google.com)</vue-markdown>
-    <vue-markdown>
+    <vue-markdown-plus>The time of **NOW** is :</vue-markdown-plus>
+    <vue-markdown-plus :source="source"></vue-markdown-plus>
+    <vue-markdown-plus :anchor-attributes="anchorAttrs">[A link to a website](https://google.com)</vue-markdown-plus>
+    <vue-markdown-plus>
 SyntaxHighlighter by highlight.js:
 
 ``` js
@@ -21,11 +21,12 @@ function $initHighlight(block, cls) {
   }
 }
 ```
-    </vue-markdown>
-    <vue-markdown>**Inline Math**: $\sqrt{3x-1}+(1+x)^2$</vue-markdown>
-    <vue-markdown></vue-markdown>
-    <vue-markdown>**Block Math**</vue-markdown>
-    <vue-markdown>$$\begin{array}{c}
+    </vue-markdown-plus>
+    <vue-markdown-plus>**Custom Style**: Adds *style*{.red} using custom classes and ids</vue-markdown-plus>
+    <vue-markdown-plus>**Inline Math**: $\sqrt{3x-1}+(1+x)^2$</vue-markdown-plus>
+    <vue-markdown-plus></vue-markdown-plus>
+    <vue-markdown-plus>**Block Math**</vue-markdown-plus>
+    <vue-markdown-plus>$$\begin{array}{c}
 
       \nabla \times \vec{\mathbf{B}} -\, \frac1c\, \frac{\partial\vec{\mathbf{E}}}{\partial t} &
       = \frac{4\pi}{c}\vec{\mathbf{j}}    \nabla \cdot \vec{\mathbf{E}} & = 4 \pi \rho \\
@@ -35,8 +36,8 @@ function $initHighlight(block, cls) {
       \nabla \cdot \vec{\mathbf{B}} & = 0
 
       \end{array}$$
-    </vue-markdown>
-    <vue-markdown>
+    </vue-markdown-plus>
+    <vue-markdown-plus>
 ### Solar System Exploration, 1950s – 1960s
 
 - [ ] Mercury
@@ -48,13 +49,13 @@ function $initHighlight(block, cls) {
 - [ ] Uranus
 - [ ] Neptune
 - [ ] Comet Haley
-    </vue-markdown>
+    </vue-markdown-plus>
   </div>
 </template>
 
 <script>
 // import VueMarkdown from '../../../src/VueMarkdown' // development
-import VueMarkdown from 'vue-markdown' // production
+import VueMarkdownPlus from 'vue-markdown-plus' // production
 
 export default {
   name: 'app',
@@ -68,7 +69,7 @@ export default {
     }
   },
   components: {
-    VueMarkdown
+    VueMarkdownPlus
   },
   mounted () {
     setInterval(() => {
@@ -77,3 +78,9 @@ export default {
   }
 }
 </script>
+
+<style>
+.red {
+  color: red;
+}
+</style>
