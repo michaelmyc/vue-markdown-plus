@@ -173,4 +173,4 @@ TIP: The default slot only renders **once** at the beginning, and it will overwr
 
 # License
 
-Copyright (c) 2016 [6etacat](https://github.com/6etacat) by [MIT](https://opensource.org/licenses/MIT)
+Copyright (c) 2020 [6etacat](https://github.com/6etacat) by [MIT](https://opensource.org/licenses/MIT)
