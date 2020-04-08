@@ -11,6 +11,7 @@ import mark from 'markdown-it-mark';
 import toc from 'markdown-it-toc-and-anchor';
 import katex from 'markdown-it-katex';
 import tasklists from 'markdown-it-task-lists';
+import span from 'markdown-it-bracketed-spans';
 
 export default {
   md: new markdownIt(),
@@ -148,6 +149,7 @@ export default {
       .use(attributes)
       .use(insert)
       .use(mark)
+      .use(span)
       .use(katex, { "throwOnError": false, "errorColor": " #cc0000" })
       .use(tasklists, { enabled: this.taskLists })
 
