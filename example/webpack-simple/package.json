@@ -1,10 +1,7 @@
 {
   "name": "webpack-simple",
   "description": "A webpack-Vue.js markdown demo",
-  "contributors": [
-    "miaolz123",
-    "Michael Mao"
-  ],
+  "author": "Michael Mao",
   "private": true,
   "scripts": {
     "dev": "cross-env NODE_ENV=development webpack-dev-server --open --inline --hot",

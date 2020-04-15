@@ -145,11 +145,11 @@ Right aligned columns
 
 ## Links
 
-[vue-markdown](https://github.com/miaolz123/vue-markdown)
+[vue-markdown](https://github.com/6etacat/vue-markdown-plus)
 
-[link with title](https://github.com/miaolz123/vue-markdown "VueMarkdown")
+[link with title](https://github.com/6etacat/vue-markdown-plus "VueMarkdown")
 
-Autoconverted link https://github.com/miaolz123/vue-markdown (enable linkify to see)
+Autoconverted link https://github.com/6etacat/vue-markdown-plus (enable linkify to see)
 
 
 ## Images

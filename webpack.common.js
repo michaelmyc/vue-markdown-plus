@@ -3,7 +3,7 @@ const webpack = require('webpack');
 const version = require("./package.json").version;
 const banner =
   "vue-markdown-plus v" + version + "\n" +
-  // "https://github.com/miaolz123/vue-markdown\n" +
+  "https://github.com/6etacat/vue-markdown-plus\n" +
   "MIT License";
 
 module.exports = {
