@@ -50,7 +50,7 @@ Supported Markdown Syntax:
 
 ```html
 <body>
-  <vue-markdown>i am a ~~tast~~ **test**.</vue-markdown>
+  <vue-markdown-plus>i am a ~~tast~~ **test**.</vue-markdown-plus>
 </body>
 <script src="path/to/vue.js"></script>
 <script src="path/to/vue-markdown-plus.js"></script>
@@ -103,10 +103,10 @@ new Vue({
 # Slots
 
 ```html
-<vue-markdown>this is the default slot</vue-markdown>
+<vue-markdown-plus>this is the default slot</vue-markdown-plus>
 ```
 
-After setting up the middleware in your vue component above, using the embedded markdown is as easy as writing it between the `vue-markdown` tags.
+After setting up the middleware in your vue component above, using the embedded markdown is as easy as writing it between the `vue-markdown-plus` tags.
 
 VueMarkdown has a default slot which is used to write the `markdown` source.
 
