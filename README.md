@@ -40,7 +40,7 @@ Supported Markdown Syntax:
 
 [webpack-simple](https://github.com/6etacat/vue-markdown-plus/blob/master/example/webpack-simple)
 
-[Live Demo](https://michaelmao.me/vue-markdown-plus)
+[Live Demo](https://github.michaelmao.me/vue-markdown-plus)
 
 # Installation
 
