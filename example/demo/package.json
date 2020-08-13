@@ -11,7 +11,7 @@
   "dependencies": {
     "core-js": "^3.6.4",
     "vue": "^2.6.11",
-    "vue-markdown-plus": "^2.0.2"
+    "vue-markdown-plus": "^2.0.9"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "~4.3.0",

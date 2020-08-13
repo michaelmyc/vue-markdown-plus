@@ -8,7 +8,7 @@
 
 A powerful and highspeed Markdown component for Vue.
 
-This is an extension to [miaolz123](https://github.com/miaolz123)'s [vue-markdown](https://github.com/miaolz123/vue-markdown). The last update to vue-markdow was in 2017, and is not actively maintained (dependencies contain security vulnerabilities). This package intends to be a safe, up-to-date alternative to vue-router. 
+This is an extension to [miaolz123](https://github.com/miaolz123)'s [vue-markdown](https://github.com/miaolz123/vue-markdown). The last update to vue-markdow code was in 2017, and is not actively maintained (dependencies contain security vulnerabilities). This package intends to be a safe, up-to-date alternative to vue-markdown. 
 
 Quick start: `<vue-markdown-plus>i am a ~~tast~~ **test**.</vue-markdown-plus>`
 
@@ -119,7 +119,7 @@ TIP: The default slot only renders **once** at the beginning, and it will overwr
 | watches | Array | `["source", "show", "toc"]` | HTML refresh automatically when the prop in this array changed |
 | source | String | `null` | the markdown source code |
 | show | Boolean | `true` | enable render to the default slot automatically |
-| html | Boolean | `true` | enable HTML syntax in source |
+| html | Boolean | `true` | enable HTML syntax in source **use with caution, do not enable on user inputs to prevent xss attacks** |
 | xhtml-out | Boolean | `true` | `<br></br>` => `<br />` |
 | breaks | Boolean | `true` | `\n` => `<br>` |
 | linkify | Boolean | `true` | autoconvert URL-like text to link |

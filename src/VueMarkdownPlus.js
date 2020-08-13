@@ -9,7 +9,7 @@ import attributes from 'markdown-it-attrs';
 import insert from 'markdown-it-ins';
 import mark from 'markdown-it-mark';
 import toc from 'markdown-it-toc-and-anchor';
-import katex from 'markdown-it-katex';
+import katex from 'markdown-it-katexx';
 import tasklists from 'markdown-it-task-lists';
 import span from 'markdown-it-bracketed-spans';
 

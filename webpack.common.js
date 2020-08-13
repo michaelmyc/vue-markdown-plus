@@ -9,7 +9,7 @@ const banner =
 module.exports = {
   entry: './src/VueMarkdownPlus.js',
   target: 'node',
-  mode: 'production',
+  mode: 'development',
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'vue-markdown-plus.common.js',
