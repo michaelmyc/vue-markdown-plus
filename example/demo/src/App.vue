@@ -27,10 +27,10 @@
     <div id="toc"></div>
     <div class="grid">
       <textarea v-model="source"></textarea>
-      <vue-markdown-plus :watches="['show','html','breaks','linkify','emoji','typographer','toc']"
+      <VueMarkdownPlus :watches="['show','html','breaks','linkify','emoji','typographer','toc']"
       :source="source" :show=show :html=html :breaks=breaks :linkify=linkify :emoji=emoji
       :typographer=typographer :toc=toc toc-id="toc" v-on:rendered="refreshTOC">
-      </vue-markdown-plus>
+      </VueMarkdownPlus>
     </div>
     <a class="github-fork-ribbon" href="https://github.com/6etacat/vue-markdown-plus" data-ribbon="Fork me on GitHub" title="Fork me on GitHub">Fork me on GitHub</a>
   </div>

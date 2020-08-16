@@ -54,8 +54,7 @@ function $initHighlight(block, cls) {
 </template>
 
 <script>
-// import VueMarkdown from '../../../src/VueMarkdown' // development
-import VueMarkdownPlus from 'vue-markdown-plus' // production
+import VueMarkdownPlus from 'vue-markdown-plus'
 
 export default {
   name: 'app',

@@ -7,9 +7,12 @@ const banner =
   "MIT License";
 
 module.exports = {
-  entry: './src/VueMarkdownPlus.js',
+  entry: './src/build.js',
   target: 'web',
-  mode: 'development',
+  mode: 'production',
+  optimization: {
+    minimize: false
+  },
   performance: { hints: false },
   output: {
     path: path.resolve(__dirname, 'dist'),
