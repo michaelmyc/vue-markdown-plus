@@ -103,14 +103,13 @@ export default {
 </script>
 
 <style>
-@import url("https://unpkg.com/bootstrap@4.1.0/dist/css/bootstrap.min.css");
-@import url("https://cdnjs.cloudflare.com/ajax/libs/github-fork-ribbon-css/0.2.3/gh-fork-ribbon.min.css");
 
 /* override browser default */
 html,
 body {
   margin: 0;
   padding: 0;
+  overflow: hidden;
 }
 
 /* github fork color */
