@@ -1,38 +1,46 @@
 <template>
   <div id="app">
-    <h2>VueMarkdownPlus Live Demo</h2>
-    <div class="flex">
-      <div class="checkbox">
-        <label><input v-model="show" type="checkbox">show</label>
-      </div>
-      <div class="checkbox">
-        <label><input v-model="html" type="checkbox">html</label>
-      </div>
-      <div class="checkbox">
-        <label><input v-model="breaks" type="checkbox">breaks</label>
-      </div>
-      <div class="checkbox">
-        <label><input v-model="linkify" type="checkbox">linkify</label>
-      </div>
-      <div class="checkbox">
-        <label><input v-model="emoji" type="checkbox">emoji</label>
-      </div>
-      <div class="checkbox">
-        <label><input v-model="typographer" type="checkbox">typographer</label>
-      </div>
-      <div class="checkbox">
-        <label><input v-model="toc" type="checkbox">toc</label>
+    <div class="toc-container">
+      <div id="toc"></div>
+    </div>
+    <div class="header">
+      <h1>VueMarkdownPlus Live Demo</h1>
+      <div class="horizontal-flex-container">
+        <div class="checkbox">
+          <label><input v-model="show" type="checkbox">show</label>
+        </div>
+        <div class="checkbox">
+          <label><input v-model="html" type="checkbox">html</label>
+        </div>
+        <div class="checkbox">
+          <label><input v-model="breaks" type="checkbox">breaks</label>
+        </div>
+        <div class="checkbox">
+          <label><input v-model="linkify" type="checkbox">linkify</label>
+        </div>
+        <div class="checkbox">
+          <label><input v-model="emoji" type="checkbox">emoji</label>
+        </div>
+        <div class="checkbox">
+          <label><input v-model="typographer" type="checkbox">typographer</label>
+        </div>
+        <div class="checkbox">
+          <label><input v-model="toc" type="checkbox">toc</label>
+        </div>
       </div>
     </div>
-    <div id="toc"></div>
-    <div class="grid">
-      <textarea v-model="source"></textarea>
-      <VueMarkdownPlus :watches="['show','html','breaks','linkify','emoji','typographer','toc']"
-      :source="source" :show=show :html=html :breaks=breaks :linkify=linkify :emoji=emoji
-      :typographer=typographer :toc=toc toc-id="toc" v-on:rendered="refreshTOC">
-      </VueMarkdownPlus>
+    <div class="horizontal-flex-container">
+      <textarea class="full-height horizontal-container content scroller" v-model="source"
+        v-on:scroll="beginSync"></textarea>
+      <div class="full-height horizontal-container scroller"
+        v-on:scroll="beginSync">
+        <VueMarkdownPlus class="content"
+          :source="source" :show="show" :html="html" :breaks="breaks" :linkify="linkify"
+          :emoji="emoji" :typographer="typographer" :toc="toc" toc-id="toc"></VueMarkdownPlus>
+      </div>
     </div>
-    <a class="github-fork-ribbon" href="https://github.com/6etacat/vue-markdown-plus" data-ribbon="Fork me on GitHub" title="Fork me on GitHub">Fork me on GitHub</a>
+    <a class="github-fork-ribbon" href="https://github.com/6etacat/vue-markdown-plus"
+    data-ribbon="Fork me on GitHub" title="Fork me on GitHub">Fork me on GitHub</a>
   </div>
 </template>
 
@@ -55,14 +63,38 @@ export default {
       emoji: true,
       typographer: true,
       toc: false,
+      leader: null,
+      timeout: null,
     };
   },
-  methods: {
-    refreshTOC() {
-      if (!this.toc) {
+  watch: {
+    toc: (toc) => {
+      if (!toc) {
         const elt = document.getElementById('toc');
         if (elt) {
           elt.innerHTML = '';
+        }
+      }
+    },
+  },
+  methods: {
+    beginSync(event) {
+      if (!this.leader) {
+        this.leader = event.target;
+      }
+      if (event.target === this.leader) {
+        if (this.timeout) {
+          clearTimeout(this.timeout);
+        }
+        this.timeout = setTimeout(() => { this.timeout = null; this.leader = null; }, 200);
+        const { clientHeight, scrollTop, scrollHeight } = event.target;
+        const percent = scrollTop / (scrollHeight - clientHeight);
+        const scrollers = document.getElementsByClassName('scroller');
+        for (let i = 0; i < scrollers.length; i += 1) {
+          const elt = scrollers[i];
+          if (elt !== this.leader) {
+            elt.scrollTop = percent * (elt.scrollHeight - elt.clientHeight);
+          }
         }
       }
     },
@@ -71,7 +103,7 @@ export default {
 </script>
 
 <style>
-@import url("https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css");
+@import url("https://unpkg.com/bootstrap@4.1.0/dist/css/bootstrap.min.css");
 @import url("https://cdnjs.cloudflare.com/ajax/libs/github-fork-ribbon-css/0.2.3/gh-fork-ribbon.min.css");
 
 /* override browser default */
@@ -81,23 +113,57 @@ body {
   padding: 0;
 }
 
+/* github fork color */
+.github-fork-ribbon::before {
+  background-color: orange;
+}
+
 #app {
-  padding: 0 10vw;
-  padding-top: 5vh;
+  padding: 5vh 20vw 5vh 20vw;
+  height: 100vh;
 }
 
-.flex {
+.toc-container {
   display: flex;
+  justify-content: center;
+  position: fixed;
+  top: calc(5vh + 6rem);
+  left: 0;
+  width: 20vw;
 }
 
-.grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-column-gap: 5vw;
+#toc {
+  width: 14vw;
 }
 
-.scrollable {
-  overflow: auto;
+.header {
+  height: 6rem;
+}
+
+input[type=checkbox] {
+  margin: 0 0.3rem;
+}
+
+.horizontal-flex-container {
+  display: flex;
+  gap: 0.6rem;
+}
+
+.horizontal-container {
+  width: calc(30vw - 10px);
+}
+
+.full-height {
+    margin: 0;
+    padding: 0;
+    height: calc(90vh - 6rem);
+    display: block;
+    border:solid #000 1px;
+    overflow: auto;
+}
+
+.content {
+  padding: 1rem;
 }
 
 /* custom css styling */

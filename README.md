@@ -46,6 +46,8 @@ Supported Markdown Syntax:
 
 ### Browser globals
 
+**This is not recommended for user inputs, as it will cause XSS vulnerabilities. Please use npm or yarn if possible.**
+
 > The **dist** folder contains `vue-markdown.js` with the component exported in the `window.VueMarkdownPlus` object.
 
 ```html
@@ -119,7 +121,7 @@ TIP: The default slot only renders **once** at the beginning, and it will overwr
 | watches | Array | `["source", "show", "toc"]` | HTML refresh automatically when the prop in this array changed |
 | source | String | `null` | the markdown source code |
 | show | Boolean | `true` | enable render to the default slot automatically |
-| html | Boolean | `true` | enable HTML syntax in source **use with caution, do not enable on user inputs to prevent xss attacks** |
+| html | Boolean | `true` | enable HTML syntax in source **use with caution, do not enable on user inputs to prevent XSS attacks** |
 | xhtml-out | Boolean | `true` | `<br></br>` => `<br />` |
 | breaks | Boolean | `true` | `\n` => `<br>` |
 | linkify | Boolean | `true` | autoconvert URL-like text to link |

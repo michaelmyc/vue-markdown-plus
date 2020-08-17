@@ -1,6 +1,9 @@
 # h1 Heading 8-)
+
 <h2> h2 Heading by HTML</h2>
+
 ## h2 Heading
+
 ### h3 Heading
 
 ## Horizontal Rules

@@ -11,7 +11,8 @@
   "dependencies": {
     "core-js": "^3.6.4",
     "vue": "^2.6.11",
-    "vue-markdown-plus": "^2.0.15"
+    "vue-markdown-plus": "^2.0.16",
+    "vue-scroll-sync": "^1.0.5"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "~4.3.0",
