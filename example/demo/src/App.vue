@@ -163,6 +163,7 @@ input[type=checkbox] {
 
 .content {
   padding: 1rem;
+  resize: none;
 }
 
 /* custom css styling */
