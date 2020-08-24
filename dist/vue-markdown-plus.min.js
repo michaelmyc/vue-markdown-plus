@@ -1,5 +1,5 @@
 /*!
- * vue-markdown-plus v2.0.15
+ * vue-markdown-plus v2.0.17
  * https://github.com/6etacat/vue-markdown-plus
  * MIT License
  */
