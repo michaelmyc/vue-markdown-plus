@@ -27,7 +27,7 @@
   "author": "Michael Mao",
   "license": "MIT",
   "devDependencies": {
-    "@babel/core": "^7.11.1",
+    "@babel/core": "^7.11.4",
     "@babel/plugin-transform-runtime": "^7.11.0",
     "babel-loader": "^8.1.0",
     "webpack": "^4.44.1",

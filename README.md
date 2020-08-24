@@ -44,9 +44,21 @@ Supported Markdown Syntax:
 
 # Installation
 
-### Browser globals
+### NPM
 
-**This is not recommended for user inputs, as it will cause XSS vulnerabilities. Please use npm or yarn if possible.**
+```shell
+$ npm install --save vue-markdown-plus
+```
+
+### Yarn
+
+```shell
+$ yarn add vue-markdown-plus --save
+```
+
+### Browser globals **(NOT RECOMMENDED)**
+
+> **This is not recommended for user inputs, as it will cause XSS vulnerabilities. Please use npm or yarn if possible.**
 
 > The **dist** folder contains `vue-markdown.js` with the component exported in the `window.VueMarkdownPlus` object.
 
@@ -62,18 +74,6 @@ Supported Markdown Syntax:
         el: "body"
     });
 </script>
-```
-
-### NPM
-
-```shell
-$ npm install --save vue-markdown-plus
-```
-
-### Yarn
-
-```shell
-$ yarn add vue-markdown-plus --save
 ```
 
 ## CommonJS
