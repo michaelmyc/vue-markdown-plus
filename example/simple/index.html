@@ -2,7 +2,7 @@
 <html>
 
 <head>
-  <title>simple</title>
+  <title>simple (NOT RECOMMENDED)</title>
   <script src="https://unpkg.com/vue@2.1.8/dist/vue.min.js"></script>
   <script src="../../dist/vue-markdown-plus.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.6.0/prism.min.js"></script>
@@ -17,6 +17,7 @@
 
 <body>
   <div id="app">
+    <vue-markdown-plus>## This method is ***[NOT RECOMMENDED]{.red}*** due to XSS vulnerabilities</vue-markdown-plus>
     <vue-markdown-plus>The time of **NOW** is :</vue-markdown-plus>
     <vue-markdown-plus :source="source"></vue-markdown-plus>
     <vue-markdown-plus :anchor-attributes="anchorAttrs">[A link to a website](https://google.com)</vue-markdown-plus>
