@@ -19,6 +19,6 @@ git add -A
 git commit -m 'deploy'
 
 # if you are deploying to https://<USERNAME>.github.io
-git push -f git@github.com:6etacat/vue-markdown-plus.git master:gh-pages
+git push -f https://github.com/michaelmyc/vue-markdown-plus.git master:gh-pages
 
 cd -

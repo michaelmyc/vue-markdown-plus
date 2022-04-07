@@ -7,49 +7,65 @@
       <h1>VueMarkdownPlus Live Demo</h1>
       <div class="horizontal-flex-container">
         <div class="checkbox">
-          <label><input v-model="show" type="checkbox">show</label>
+          <label><input v-model="show" type="checkbox" />show</label>
         </div>
         <div class="checkbox">
-          <label><input v-model="html" type="checkbox">html</label>
+          <label><input v-model="html" type="checkbox" />html</label>
         </div>
         <div class="checkbox">
-          <label><input v-model="breaks" type="checkbox">breaks</label>
+          <label><input v-model="breaks" type="checkbox" />breaks</label>
         </div>
         <div class="checkbox">
-          <label><input v-model="linkify" type="checkbox">linkify</label>
+          <label><input v-model="linkify" type="checkbox" />linkify</label>
         </div>
         <div class="checkbox">
-          <label><input v-model="emoji" type="checkbox">emoji</label>
+          <label><input v-model="emoji" type="checkbox" />emoji</label>
         </div>
         <div class="checkbox">
-          <label><input v-model="typographer" type="checkbox">typographer</label>
+          <label><input v-model="typographer" type="checkbox" />typographer</label>
         </div>
         <div class="checkbox">
-          <label><input v-model="toc" type="checkbox">toc</label>
+          <label><input v-model="toc" type="checkbox" />toc</label>
         </div>
       </div>
     </div>
     <div class="horizontal-flex-container">
-      <textarea class="full-height horizontal-container content scroller" v-model="source"
-        v-on:scroll="beginSync"></textarea>
-      <div class="full-height horizontal-container scroller"
-        v-on:scroll="beginSync">
-        <VueMarkdownPlus class="content"
-          :source="source" :show="show" :html="html" :breaks="breaks" :linkify="linkify"
-          :emoji="emoji" :typographer="typographer" :toc="toc" toc-id="toc"></VueMarkdownPlus>
+      <textarea
+        class="full-height horizontal-container content scroller"
+        v-model="source"
+        v-on:scroll="beginSync"
+      ></textarea>
+      <div class="full-height horizontal-container scroller" v-on:scroll="beginSync">
+        <VueMarkdownPlus
+          class="content"
+          :source="source"
+          :show="show"
+          :html="html"
+          :breaks="breaks"
+          :linkify="linkify"
+          :emoji="emoji"
+          :typographer="typographer"
+          :toc="toc"
+          toc-id="toc"
+        ></VueMarkdownPlus>
       </div>
     </div>
-    <a class="github-fork-ribbon" href="https://github.com/6etacat/vue-markdown-plus"
-    data-ribbon="Fork me on GitHub" title="Fork me on GitHub">Fork me on GitHub</a>
+    <a
+      class="github-fork-ribbon"
+      href="https://github.com/6etacat/vue-markdown-plus"
+      data-ribbon="Fork me on GitHub"
+      title="Fork me on GitHub"
+      >Fork me on GitHub</a
+    >
   </div>
 </template>
 
 <script>
-import VueMarkdownPlus from 'vue-markdown-plus';
-import defaultMarkdown from './default.md';
+import VueMarkdownPlus from "vue-markdown-plus";
+import defaultMarkdown from "./default.md";
 
 export default {
-  name: 'Demo',
+  name: "DemoApp",
   components: {
     VueMarkdownPlus,
   },
@@ -68,11 +84,11 @@ export default {
     };
   },
   watch: {
-    toc: (toc) => {
+    toc(toc) {
       if (!toc) {
-        const elt = document.getElementById('toc');
+        const elt = document.getElementById("toc");
         if (elt) {
-          elt.innerHTML = '';
+          elt.innerHTML = "";
         }
       }
     },
@@ -86,10 +102,13 @@ export default {
         if (this.timeout) {
           clearTimeout(this.timeout);
         }
-        this.timeout = setTimeout(() => { this.timeout = null; this.leader = null; }, 200);
+        this.timeout = setTimeout(() => {
+          this.timeout = null;
+          this.leader = null;
+        }, 200);
         const { clientHeight, scrollTop, scrollHeight } = event.target;
         const percent = scrollTop / (scrollHeight - clientHeight);
-        const scrollers = document.getElementsByClassName('scroller');
+        const scrollers = document.getElementsByClassName("scroller");
         for (let i = 0; i < scrollers.length; i += 1) {
           const elt = scrollers[i];
           if (elt !== this.leader) {
@@ -103,7 +122,6 @@ export default {
 </script>
 
 <style>
-
 /* override browser default */
 html,
 body {
@@ -139,7 +157,7 @@ body {
   height: 6rem;
 }
 
-input[type=checkbox] {
+input[type="checkbox"] {
   margin: 0 0.3rem;
 }
 
@@ -153,12 +171,12 @@ input[type=checkbox] {
 }
 
 .full-height {
-    margin: 0;
-    padding: 0;
-    height: calc(90vh - 6rem);
-    display: block;
-    border:solid #000 1px;
-    overflow: auto;
+  margin: 0;
+  padding: 0;
+  height: calc(90vh - 6rem);
+  display: block;
+  border: solid #000 1px;
+  overflow: auto;
 }
 
 .content {

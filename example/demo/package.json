@@ -9,23 +9,22 @@
     "deploy": "sh ./deploy.sh"
   },
   "dependencies": {
-    "core-js": "^3.6.5",
-    "vue": "^2.6.12",
-    "vue-markdown-plus": "^2.0.17",
+    "core-js": "^3.21.1",
+    "vue": "^2.6.0",
+    "vue-markdown-plus": "^2.1.0",
     "vue-scroll-sync": "^1.0.5"
   },
   "devDependencies": {
-    "@vue/cli-plugin-babel": "~4.5.4",
-    "@vue/cli-plugin-eslint": "~4.5.4",
-    "@vue/cli-service": "~4.5.4",
-    "@vue/eslint-config-airbnb": "^5.1.0",
-    "babel-eslint": "^10.1.0",
-    "eslint": "^7.7.0",
-    "eslint-plugin-import": "^2.22.0",
-    "eslint-plugin-vue": "^6.2.2",
-    "raw-loader": "^4.0.1",
-    "sass": "^1.26.10",
-    "sass-loader": "^9.0.3",
-    "vue-template-compiler": "^2.6.12"
+    "@babel/eslint-parser": "^7.17.0",
+    "@vue/cli-plugin-babel": "~5.0.4",
+    "@vue/cli-plugin-eslint": "~5.0.4",
+    "@vue/cli-service": "~5.0.4",
+    "eslint": "~8.12.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-vue": "^8.6.0",
+    "raw-loader": "^4.0.2",
+    "sass": "^1.50.0",
+    "sass-loader": "^12.6.0",
+    "vue-template-compiler": "^2.6.14"
   }
 }
